@@ -53,7 +53,7 @@
 							@enderror
 							<label>Images <span style="font-weight: normal">(max 2 images)</span></label>
               <label class="upload-btn margin-top-0 margin-bottom-0" style="color: #fff">
-							  <input type="file" name="images[]" multiple accept="image/png, image/jpeg" required>
+							  <input type="file" name="images[]" multiple accept="image/png, image/jpeg">
 							  <i class="fa fa-upload"></i> Browse
 							</label>
               <span class="fake-input margin-bottom-0" id="filename">No file selected</span>

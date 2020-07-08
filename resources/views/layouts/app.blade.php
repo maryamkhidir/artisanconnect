@@ -103,10 +103,16 @@
 			<ul data-submenu-title="Home">
 				<li class="active"><a href="{{url("dashboard")}}">Dashboard</a></li>
 			</ul>
-
+			@if(Auth::user()->type == 4)
 			<ul data-submenu-title="Portfolio">
 				<li><a href="{{url("dashboard/manage_skills")}}">Manage Skills</a></li>
 				<li><a href="{{url("dashboard/add_skills")}}">Add Skills</a></li>
+			</ul>	
+			@endif
+
+			<ul data-submenu-title="Services">
+				<li><a href="{{url("dashboard/manage_tasks")}}">Pending Tasks</a></li>
+				<li><a href="{{url("dashboard/completed_tasks")}}">Completed Tasks</a></li>
 			</ul>	
 
 			<ul data-submenu-title="Account">

@@ -33,3 +33,8 @@ Route::post('/dashboard/add_skills', 'SkillsController@create')->name('create_sk
 Route::get('/browse-artisans', 'SearchController@browseArtisans');
 Route::get('/view-artisan', 'SearchController@viewArtisan');
 
+Route::post('/save_job', 'JobsController@saveJob');
+Route::post('/close_task', 'JobsController@closeTask');
+Route::get('/dashboard/manage_tasks', 'JobsController@index');
+Route::get('/dashboard/completed_tasks', 'JobsController@completedTasks');
+

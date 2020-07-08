@@ -37,7 +37,7 @@
             <span><i class="fa fa-map-marker"></i>{{$data->state}}</span>
               <span><i class="fa fa-clock-o"></i> {{ str_replace("to","-",$data->experience) }} years</span>
               <span title="{{$data->star}}">
-                @for ($i = 0; $i < (int)$data->star; $i++)<b class="fa fa-star checked"></b>@endfor @if ((int) $data->star != $data->star)<b class="fa fa-star-half-o checked"></b>@endif	
+                @for ($i = 0; $i < (int)$data->star; $i++)<b class="fa fa-star checked"></b>@endfor @if ((int) $data->star != $data->star)<b class="fa fa-star-half-o checked"></b>@endif	@for ($i = 0; $i < (int)(5 - $data->star); $i++)<b class="fa fa-star"></b>@endfor
               </span>
               <p>{{$data->description}}</p>
   

@@ -82,6 +82,7 @@
     <div title="{{$user->star}}">
         @for ($i = 0; $i < (int)$user->star; $i++)<span class="fa fa-star checked"></span>@endfor
         @if ((int) $user->star != $user->star)<span class="fa fa-star-half-o checked"></span>@endif	
+        @for ($i = 0; $i < (int)(5 - $user->star); $i++)<span class="fa fa-star"></span>@endfor
     </div>
 
     <h3 class="margin-bottom-5 margin-top-20">Experience</h3>
@@ -158,9 +159,9 @@
       //If user is logged in, dislay the email and phone number. Else take to login page.
       var authid = '<?php if(Auth::user()) echo Auth::user()->id; else echo ""; ?>'
       var email = '<?php echo $user->email; ?>'
+      var artisanid = '<?php echo $user->id; ?>'
       var phone = '<?php echo $user->phone; ?>'
-      console.log(authid);
-  
+
       $('#view-contact').click(() => {
         if(authid === ""){
           alert("Please log in to view contact");//not logged
@@ -168,6 +169,18 @@
         }else{
           $('#userphone').html(phone);
           $('#useremail').html(email);
+
+          $.ajax({
+              method: "POST",
+              url: "save_job",
+              data: {userid:authid, artisanid:artisanid, _token: $('meta[name="csrf-token"]').attr('content')},
+              success : function(data){
+                console.log("Success: " + data)
+              },
+              error: function(err){
+                console.log("Error: "+ err)
+              }
+          });
         }
       })
   

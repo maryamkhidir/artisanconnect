@@ -45,7 +45,6 @@ class SkillsController extends Controller
     public function create(Request $request){
 
         $request->validate([
-            'images.*' => 'required|image',
             'skills' => 'required',
             'skills.*' => 'required'
         ]);

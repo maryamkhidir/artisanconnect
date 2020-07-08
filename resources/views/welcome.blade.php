@@ -29,7 +29,7 @@
     padding: 40px;
 	}
 	.listing-type{
-		color: orange !important;
+		color: #333 !important;
     border-color: unset !important;
     background-color: unset !important;
     border: unset;
@@ -242,6 +242,7 @@
 							<span class="listing-type" title="{{$data->star}}">
 								@for ($i = 0; $i < (int)$data->star; $i++)<span class="fa fa-star checked"></span>@endfor
 								@if ((int) $data->star != $data->star)<span class="fa fa-star-half-o checked"></span>@endif	
+								@for ($i = 0; $i < (int)(5 - $data->star); $i++)<span class="fa fa-star"></span>@endfor
 							</span>
 						</h4>
 						<ul class="listing-icons">
@@ -290,6 +291,7 @@
 									<h4><strong>{{$spot_artisan->name}}</strong> <br/>
 										<div title="{{$spot_artisan->star}}">
 											@for ($i = 0; $i < (int)$spot_artisan->star; $i++)<b class="fa fa-star checked"></b>@endfor @if ((int) $spot_artisan->star != $spot_artisan->star)<b class="fa fa-star-half-o checked"></b>@endif	
+											@for ($i = 0; $i < (int)(5 - $spot_artisan->star); $i++)<b class="fa fa-star" style="font-size: 14px"></b>@endfor
 										</div>
 									</h4>
 								</a>
